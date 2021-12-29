@@ -1,0 +1,17 @@
+name: Build source
+
+on:
+    push:
+        paths:
+            - "src/**"
+            - "include/**"
+
+jobs:
+    web:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: egor-tensin/setup-gcc@v1
+              with:
+                  node-version: 12
+            - run: echo 'Needs to be configured'
